@@ -1,0 +1,69 @@
+@mixin button-color($start-color, $end-color) {
+    background-color: $start-color;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start-color), to($end-color));
+    background-image: -webkit-linear-gradient(top, $start-color, $end-color); 
+    background-image: -moz-linear-gradient(top, $start-color, $end-color); 
+    background-image: -ms-linear-gradient(top, $start-color, $end-color); 
+    background-image: -o-linear-gradient(top, $start-color, $end-color);
+	background-image: linear-gradient(to bottom, $start-color, $end-color);
+	filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=$start-color, endColorstr=$end-color);
+}
+
+
+
+button, .button {
+  	display: inline-block;
+  	cursor: pointer;
+	border-style:solid;
+  	border-radius: 3px;
+	border-color:#999;
+	border-width:0 0 3px 0;
+  	text-align:center;
+  	color: #000;
+  	text-decoration: none;
+	font-size:1em;
+	@include button-color(#ccc, #bababa);
+}
+
+button:hover, .button:hover, button:focus, .button:focus{
+	@include button-color(#b1b1b1, #b1b1b1);
+	text-decoration:none;
+}
+
+button.orange, .button.orange {
+	@include button-color($color-one, $color-one); //was using darker orange #e73125
+	color:#fff !important;
+ 	border-color: #d02a20;
+	&:hover, &:focus {
+		@include button-color(#fc4034, #fc4034);
+		border-color:#e73125;
+	}
+}
+
+button.green, .button.green {
+	@include button-color($light-green, $dark-green);
+	color:#fff !important;
+ 	border-color: #2d890c;
+	&:hover, &:focus {
+		@include button-color($dark-green, $dark-green);
+	}
+}
+
+button, .button, button:hover, .button:hover, button:active, .button:active, 
+button:focus, .button:focus, button:focus, input[type="button"]:focus, 
+input[type="reset"]:focus, input[type="submit"]:focus, button:active, 
+input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active{
+	padding: 10px 15px !important;
+} //This is causing issues with the search input inside the text box on the homepage.
+
+
+.button-stretch button, .button-stretch .button {
+	padding:.5em 1em !important;
+	font-size:1.5em;
+	//line-height:1.5em;
+	//height:1.5em;
+	//text-transform:uppercase;
+	border-radius:2px;
+	vertical-align:middle;
+	display:block;
+}

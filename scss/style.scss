@@ -1,0 +1,492 @@
+// Hand crafted by Andrew Iacco
+// Ann Arbor, Michigan
+// Created Summer 2017
+
+// ---------------------- Variables ----------------
+
+//$font-color:#252525;
+
+$color-one:#ef4136;
+$color-two:#2e76ff;
+$color-three:#17bf4c;
+
+$primary-color:#2a6be5;
+$primary-light:#2e76ff;
+$primary-dark:#173b7f;
+
+$font-color:#283c46;
+
+$grey-one:#f7f7f7;	
+$grey-two:#e8e8e8;
+$grey-three:#ddd;		
+$grey-four:#ccc;
+$grey-five:#a1a1a1;
+$grey-six:#686868;		
+$dark-grey:#414141;		
+$highlight:#ffffcc;		
+$mavin-red:#e35111;		
+$light-red:#f06f37;		
+$dark-green:#389717;	
+$light-green:#48c31e;	
+$promoted:lighten($mavin-red, 40%);
+$background-color:#f0f4e4;
+
+//$unvisited: #2200cc;
+$unvisited:$primary-light;
+//$visited: #660099;
+$visited:$primary-light;
+
+$line-height:1.25em;
+
+$gutter:10px;
+// ---------------------- Mixins and Partial  ----------------
+
+@mixin rounded($radius) {
+	-moz-border-radius: $radius;     // for mozilla-based browsers 
+	-webkit-border-radius: $radius;  // for webkit-based browsers 
+	border-radius: $radius;          // for all browsers 
+}
+
+@mixin shadow($shadow-color) {
+	-moz-box-shadow: 3px 3px 5px $shadow-color;     // for mozilla-based browsers 
+	-webkit-box-shadow: 3px 3px 5px $shadow-color;  // for webkit-based browsers 
+	box-shadow: 3px 3px 5px $shadow-color;          // for all browsers 
+}
+
+@mixin shades($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //ie8
+}
+
+@import "compass/reset";
+@import "grid";
+@import "buttons";
+@import "images";
+@import "lightbox";
+//@import "marvin";
+//@import "speech-bubble";
+//@import "source-sans-pro"; //causing scroll positon during animation to be off on hard reload. Remote assets taking time to load.
+
+// -------------------- Basic Stuff --------------------
+
+html {
+	font-size: 1.1em;
+	//font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	font-family:Helvetica, Arial, sans-serif;
+	//font-family: 'Roboto', sans-serif;
+	//border-left:30px solid #E03B3B;
+}
+
+body {
+	color:$font-color;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family:Helvetica, Arial, sans-serif;
+	//font-family: 'Open Sans', sans-serif;
+	font-weight:700;
+}
+
+h1 {
+	font-size:3em;
+	//font-weight:700;
+}
+
+h2 {
+	font-size:2em;
+}
+
+h3 {
+	font-size:1.5em; 
+	a {
+		font-weight:normal;
+	}
+}
+
+h4 {
+	font-size:1.15em;
+}
+h5 {
+	font-size:1em;
+	font-weight:bold;
+}
+
+h1, h2, h3, h4, h5 {
+	padding:.85em 0 .4em 0;
+	margin:0;
+	line-height:initial;
+	letter-spacing:initial;
+}
+
+p {
+	margin-bottom:1.2em;
+	line-height:1.4;
+}
+ul, ol {
+	line-height:1.4;
+	margin-bottom:1.2em;
+	padding-left:1em;
+	li {
+		list-style-type:disc;
+		margin-left:1em;
+	}
+}
+
+ol {
+	li {
+		list-style-type:decimal;
+	}
+}
+
+i {font-style:italic;}
+
+strong {font-weight:bold;}
+
+a:link, .default-link:visited {
+	color:$unvisited;
+	text-decoration:none;
+}
+
+a:visited, a.visited  {
+	color:$visited;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+hr {
+	border:0;
+	height:1px;
+	border-top:1px solid $grey-two;
+	margin:0;
+	&.wide {
+		margin:2em 0;
+	}
+}
+
+// -------------------- Utilities --------------------
+
+.u-full-width {
+	width: 100%;
+  	box-sizing: border-box;
+}
+
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.divider {
+	padding:0 4px;
+	color:$grey-three;
+}
+
+.padtop {padding-top:1em;}
+.padbox {padding:$gutter;}
+.nobottom-padbox {padding:$gutter $gutter 0 $gutter;}
+.gutterbox {padding:(.5*$gutter) $gutter;}
+.padleft {display:inline-block; padding-left:1em;}
+.top-margin {margin-top:6em;}
+.noshow {display:none;}
+.hidden {visibility:hidden;}
+.ghost {opacity:.1;}
+.highlight {background-color:$highlight;}
+.highlighter {
+	background-color:#ffff78; 
+	color:$grey-six; 
+	font-weight:bold;
+}
+
+.center-align {
+	text-align:center;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.step {
+	display:table;
+	& > span {
+		display:table-cell;
+	}
+	.number-holder span {
+		@include rounded(10px);
+		padding:1px 10px;
+		margin-right:10px;
+		color:#fff;
+		font-weight:bold;
+		background-color:$color-one;
+		white-space:nowrap;	
+	}
+}
+
+/*.round-number {
+	padding:0;
+	text-align:center;
+	span {
+		display:inline-block;
+		height:1.5em;
+		width:1.5em;
+		font-size:1.5em;
+		line-height:1.5em;
+		color:#fff;
+		@include rounded(50%);
+		background-color:$primary-color;
+	}
+}*/
+
+.background-texture {
+	background: $grey-one url(../images/blob-comp.svg) top center repeat-y;
+    background-size: 200%, 100rem;
+}
+
+// ---------------------- Home ----------------
+
+#header {
+	.logo {
+		max-height:90px;
+		.logo-color {
+			fill:$color-one;
+		}
+	}
+	h1 {
+		padding:0; 
+		margin:0 20px; 
+		display:inline-block; 
+		border-bottom:1px solid #ccc;
+	}
+	@media (#{$bp-smaller-than-phablet}){
+		text-align:center;
+		h1 {
+			font-size:2.5em;
+		}
+		svg {
+			height:100px;
+			width:100%;
+			margin:auto;
+		}
+	}
+}
+
+#main-content {
+	.row {
+		margin-left:20px;
+		@media (#{$bp-smaller-than-phablet}){
+			margin-left:0;
+		}
+	}
+}
+
+#drop {
+	z-index:-10;
+	opacity:0;
+	transition:all 0.1s ease;
+	&.show-it {
+		opacity:1;
+	}
+	@media (#{$bp-smaller-than-phablet}){
+		//display:none;
+		position:relative;
+		transform:translateY(-160px);
+		right:0;
+		left:0;
+		margin:0 auto;
+	}
+	@media (#{$bp-larger-than-phablet}){
+		transform:translateY(-65px);
+		position:relative;
+	}
+}
+
+#page-puddle {
+	border-color:#ef4237;;
+	margin-bottom:2em;
+	&:before { 
+		content: '';
+		position: absolute;
+		border-bottom-width:3px;
+		border-bottom-style:solid;
+		border-color:inherit;
+		height: 32px;
+		left:50px;
+		right:0;
+		transform: translateY(-24px);
+	}
+	@media (#{$bp-smaller-than-phablet}){
+		text-align:center;
+		&:before { 
+		  left:0;
+		}
+	}
+}
+
+.paint-bucket {
+	position:relative;
+	bottom:-10px;
+	display:inline-block;
+	&:hover {
+		text-decoration:none;
+	}
+	svg {
+		width:18px;
+		height:18px;
+	}
+	&.color-one { //red
+		color: $color-one;
+		.color-fill-one {
+			fill: $color-one;
+		}
+	}
+	&.color-two { //blue
+		color: $color-two;
+		.color-fill-two {
+			fill:$color-two;
+		}
+	}
+	&.color-three { //green
+		color:  $color-three;
+		.color-fill-three {
+			fill: $color-three;
+		}
+	}
+	&.color-four { //black
+		color: $font-color;
+		.color-fill-four {
+			fill:$font-color;
+		}
+	}
+}
+
+.project-card {
+	padding:1em;
+	img {
+		width:100%;
+		height:auto;
+		border:1px solid #ccc;
+		@include shadow(#ccc);
+	}
+	h5 {
+		padding:.5em 0 0 0;
+	}
+}
+
+// ---------------------- Footer ----------------
+
+.site-info {
+	text-align:center;
+	color:$grey-five;
+	padding-top:1.5em;
+	font-size:.9em;
+	a {
+		text-decoration:none;
+		&:hover, &:focus {
+			color:$mavin-red;
+		}	
+	}
+	.footer-links {
+		margin-bottom:1.5em;
+		line-height:2em;
+		a {
+			padding:.25em .4em;
+			color:$mavin-red;
+			&:hover {text-decoration:underline;}
+		}
+		.divider {
+			padding:0;
+		}
+	}
+}
+
+.made-in {
+	margin:1.5em 0;
+	span {
+		display:inline-block; 
+		text-align:left;
+		font-size:.9em;
+		line-height:.9em; 
+		a:link, a:visited {
+			color:inherit;
+			margin:0;
+			cursor:pointer;
+		}
+		a:hover {
+			text-decoration:underline;
+		}
+	}
+}
+
+// ---------------------- Responsive Enhancements ----------------
+
+.responsive-break {
+	display:none;
+	@media (#{$bp-smaller-than-tablet}){
+		display:inline;
+	}
+}
+
+.responsive-hide { 
+	@media (#{$bp-smaller-than-tablet}){
+		display:none !important;
+	}
+}
+
+#content-wrapper, #example-wrapper {
+	height: 100%;
+}
+
+#content-wrapper, #example-wrapper {
+	height: 100%;
+}
+
+#example-wrapper .scrollContent {
+	height: 100%;
+}
+
+#example-wrapper.scrollContainer .scrollContent {
+	width: 100%;
+	height: auto;
+}
+#example-wrapper.scrollContainer.horizontal .scrollContent {
+	width: auto;
+	height: 100%;
+}
+#example-wrapper.horizontal {
+	white-space: nowrap;
+	font-size: 0;  /* fix for spaces between inline block divs */
+}
+#example-wrapper.horizontal div {
+	font-size: 13px;
+}
+#example-wrapper .scrollContent, #example-wrapper.horizontal .scrollContent {
+	font-size: 0;
+}
+#example-wrapper .scrollContent div {
+	font-size: 13px;
+}
+#example-wrapper section {
+}
+
+.scrollContent {
+    position: relative;
+    /*height: 100%;*/
+}
+
+.trigger-space {
+	min-height: 1px;
+}

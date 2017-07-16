@@ -1,0 +1,40 @@
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	fill: currentColor;
+}
+
+#drop {
+	height:1.5em;
+}
+
+/*.arrow {
+	font-size:5em;
+	path {
+		stroke: #ff0000;
+	}
+}*/
+
+.arrows {
+	display:table;
+	width:100%;
+	padding:1em 0;
+	.arrow {
+		display:table-cell;
+		vertical-align:middle;
+		text-align:center;
+		opacity:0;
+		transition:all 1s ease-out;
+		&.fade-in {
+			opacity:1;
+		//	transform:translateY(0);
+		}
+	}
+	svg {
+		font-size:5em;
+		path {
+			stroke:$color-one;
+		}
+	}
+}
