@@ -66,14 +66,14 @@ $gutter:10px;
 @import "lightbox";
 //@import "marvin";
 //@import "speech-bubble";
-//@import "source-sans-pro"; //causing scroll positon during animation to be off on hard reload. Remote assets taking time to load.
+@import "source-sans-pro"; //causing scroll positon during animation to be off on hard reload. Remote assets taking time to load.
 
 // -------------------- Basic Stuff --------------------
 
 html {
 	font-size: 1.1em;
-	//font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-	font-family:Helvetica, Arial, sans-serif;
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+	//font-family:Helvetica, Arial, sans-serif;
 	//font-family: 'Roboto', sans-serif;
 	//border-left:30px solid #E03B3B;
 }
@@ -83,7 +83,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-	font-family:Helvetica, Arial, sans-serif;
+	//font-family:Helvetica, Arial, sans-serif;
 	//font-family: 'Open Sans', sans-serif;
 	font-weight:700;
 }
@@ -384,6 +384,11 @@ hr {
 	h5 {
 		padding:.5em 0 0 0;
 	}
+	p {
+		color:$grey-six;
+		//font-style:italic;
+		font-size:.9em;
+	}
 }
 
 // ---------------------- Footer ----------------
@@ -446,42 +451,7 @@ hr {
 	}
 }
 
-#content-wrapper, #example-wrapper {
-	height: 100%;
-}
-
-#content-wrapper, #example-wrapper {
-	height: 100%;
-}
-
-#example-wrapper .scrollContent {
-	height: 100%;
-}
-
-#example-wrapper.scrollContainer .scrollContent {
-	width: 100%;
-	height: auto;
-}
-#example-wrapper.scrollContainer.horizontal .scrollContent {
-	width: auto;
-	height: 100%;
-}
-#example-wrapper.horizontal {
-	white-space: nowrap;
-	font-size: 0;  /* fix for spaces between inline block divs */
-}
-#example-wrapper.horizontal div {
-	font-size: 13px;
-}
-#example-wrapper .scrollContent, #example-wrapper.horizontal .scrollContent {
-	font-size: 0;
-}
-#example-wrapper .scrollContent div {
-	font-size: 13px;
-}
-#example-wrapper section {
-}
-
+// ---------------------- Scrolling fixes ----------------
 .scrollContent {
     position: relative;
     /*height: 100%;*/
@@ -489,4 +459,13 @@ hr {
 
 .trigger-space {
 	min-height: 1px;
+}
+
+// ---------------------- Lightbox overrides ----------------
+
+.featherlight .featherlight-close-icon {
+	line-height:40px;
+	width:40px;
+	font-size:30px;
+	right:10px;
 }
