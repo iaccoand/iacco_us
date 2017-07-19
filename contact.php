@@ -6,9 +6,8 @@
 	
 		$body = "iacco.us web contact form:
 		Name:  $_POST[name]
-		Company: $_POST[company]
-		Message: $_POST[message]
-		Contact: $_POST[email]";
+		Contact: $_POST[email]
+		Message: $_POST[message]";
 
 		if( $_POST['email'] && !preg_match( "/[\r\n]/", $_POST['email']) ) {
 		  $headers = "From: $_POST[email]";
@@ -31,7 +30,7 @@
 	<div class="container padbox">
 		<h1>Thanks</h1>
 		<p>We'll get back to you as soon as possible.</p>
-		<p><a href="/" class="default-link">&larr; Go back to iacco.us</a></p>
+		<p><a href="/" class="default-link">&larr; Go back</a></p>
 	</div>
 </body>
 </html>
