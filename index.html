@@ -16,7 +16,6 @@
 </head>
 <body class="background-texture">
 	<div class="container padbox">
-		<!-- Header... logo, name, and contact info. -->
 		<div class="row" id="header">
 			<div class="two columns">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="logo" width="100%" height="100%" viewBox="0 0 30 32">
@@ -26,8 +25,7 @@
 				<path fill="none" stroke="#fff" stroke-width="0.6683" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="miter" d="M28.25 14.869c0 7.391-5.991 13.382-13.382 13.382s-13.382-5.991-13.382-13.382c0-7.391 5.991-13.382 13.382-13.382s13.382 5.991 13.382 13.382z"></path>
 				<path fill="#fff" d="M15.604 18.481c0 0.152-0.158 0.31-0.472 0.475s-0.618 0.247-0.911 0.247c-0.612 0-0.931-0.316-0.957-0.949-0.337 0.66-0.86 0.989-1.569 0.989-0.381 0-0.696-0.114-0.944-0.341s-0.372-0.519-0.372-0.875c0-0.73 0.437-1.31 1.311-1.738 0.3-0.142 0.821-0.285 1.563-0.428v-0.334c0-0.784-0.040-1.301-0.12-1.55-0.143-0.454-0.464-0.682-0.962-0.682-0.312 0-0.572 0.085-0.782 0.254s-0.314 0.383-0.314 0.642c0 0.072 0.054 0.107 0.163 0.107s0.207 0.053 0.294 0.16c0.087 0.107 0.131 0.227 0.131 0.361 0 0.392-0.194 0.588-0.582 0.588-0.203 0-0.37-0.069-0.503-0.207s-0.198-0.314-0.198-0.528c0-0.419 0.165-0.78 0.495-1.083 0.365-0.329 0.873-0.495 1.524-0.495 0.98 0 1.582 0.267 1.804 0.802 0.080 0.205 0.12 0.61 0.12 1.216v2.499c0 0.41 0.004 0.651 0.013 0.722 0.045 0.321 0.174 0.481 0.388 0.481 0.249 0 0.454-0.089 0.615-0.267 0.089-0.098 0.156-0.147 0.2-0.147s0.067 0.027 0.067 0.080zM13.251 17.065v-0.976c-0.659 0.152-1.131 0.35-1.416 0.595s-0.428 0.573-0.428 0.982c0 0.285 0.081 0.519 0.244 0.701s0.367 0.274 0.613 0.274c0.378 0 0.68-0.214 0.909-0.642 0.053-0.098 0.079-0.409 0.079-0.935z"></path>
 				<path fill="#fff" d="M19.747 19.003c0 0.080-0.076 0.12-0.227 0.12 0.009 0-0.098-0.009-0.321-0.027-0.267-0.018-0.49-0.027-0.668-0.027h-1.39c-0.045 0.036-0.098 0.053-0.16 0.053-0.098 0-0.147-0.033-0.147-0.099 0-0.094 0.089-0.142 0.267-0.142 0.339-0.009 0.523-0.033 0.555-0.073s0.047-0.225 0.047-0.555v-4.050c-0.009-0.223-0.020-0.354-0.033-0.394s-0.069-0.060-0.167-0.060h-0.387c-0.036 0-0.080 0-0.134 0-0.098 0-0.147-0.031-0.147-0.094 0-0.055 0.075-0.086 0.224-0.094 0.589-0.026 1.094-0.165 1.517-0.417l0.132-0.078c0.070 0.133 0.105 0.378 0.105 0.733 0-0.018 0 0.027 0 0.133s0 0.28 0 0.52v3.641c0 0.356 0.007 0.564 0.020 0.626s0.060 0.102 0.141 0.12c0.134 0.036 0.329 0.053 0.588 0.053 0.124 0 0.187 0.036 0.187 0.107zM18.744 10.676c0 0.401-0.2 0.601-0.601 0.601-0.169 0-0.312-0.056-0.428-0.167s-0.174-0.247-0.174-0.408c0-0.419 0.2-0.628 0.601-0.628s0.601 0.2 0.601 0.601z"></path>
-				</svg>
-				
+				</svg>	
 			</div>
 			<div class="fourteen columns">
 				<h1>Andrew Iacco</h1>	
@@ -41,7 +39,6 @@
 				</p>
 			</div>
 		</div>
-		
 		<div class="row" >
 			<div class="two columns" style="text-align:center; height:1px;">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" id="drop" viewBox="0 0 23 32">
@@ -175,9 +172,7 @@
 				</div>
 			</div>
 		</div>
-		
-	</div><!--end of container padbox -->
-	
+	</div>
 	<!--========== PUDDLE AND PAINT BUCKETS ==========-->
 	<div class="container" >
 		<div id="page-puddle">
@@ -307,25 +302,29 @@
 		</div>
 		<div id="contact-me"> 
 			<h2>Contact Andrew!</h2>
-			<p>Phone:</p>
-			<p>Email:</p>
-			<h4>Send Andrew a message</h4>
-			<form>
+			<form method="post" action="contact.php">
 				<div>
 					<label for="name">Name</label>
-					<input type="text" id="name" />
+					<input type="text" id="name" name="name" tabindex="1" required />
 				</div>
 				<div>
 					<label for="company">Company</label>
-					<input type="text" id="company" />
+					<input type="text" id="company" name="company" tabindex="2" required />
 				</div>
 				<div>
 					<label for="message">Message</label>
-					<textarea id="message"></textarea>
+					<textarea id="message" name="message" tabindex="3" required></textarea>
 				</div>
 				<div>
-					<label for="contact-return">What's the best way to get back to you?</label>
-					<input type="text" id="contact-return" />
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" tabindex="4" required />
+				</div>
+				<div class="antispam">
+					<label for="url">Leave this empty if you're not a robot:
+					<input id="url" name="url" />
+				</div>
+				<div>
+					<input type="submit" value="Send" class="button orange" tabindex="5" />
 				</div>
 			</form>
 		</div>
@@ -336,7 +335,6 @@
 			<h1>Thomson Reuters</h1>
 		</div>-->
 	</div>
-	
 	<script type="text/javascript" src="javascripts/jquery.min.js"></script>
 	<script type="text/javascript" src="javascripts/TweenMax.min.js"></script>
 	<script type="text/javascript" src="javascripts/ScrollMagic.min.js"></script>

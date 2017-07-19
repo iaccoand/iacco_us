@@ -39,8 +39,8 @@ $visited:$primary-light;
 $line-height:1.25em;
 
 $gutter:10px;
-// ---------------------- Mixins and Partial  ----------------
 
+// ---------------------- Mixins and Partial  ----------------
 @mixin rounded($radius) {
 	-moz-border-radius: $radius;     // for mozilla-based browsers 
 	-webkit-border-radius: $radius;  // for webkit-based browsers 
@@ -66,16 +66,13 @@ $gutter:10px;
 @import "lightbox";
 //@import "marvin";
 //@import "speech-bubble";
-@import "source-sans-pro"; //causing scroll positon during animation to be off on hard reload. Remote assets taking time to load.
+@import "source-sans-pro";
+@import "forms";
 
 // -------------------- Basic Stuff --------------------
-
 html {
 	font-size: 1.1em;
 	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-	//font-family:Helvetica, Arial, sans-serif;
-	//font-family: 'Roboto', sans-serif;
-	//border-left:30px solid #E03B3B;
 }
 
 body {
@@ -88,25 +85,17 @@ h1, h2, h3, h4, h5 {
 	font-weight:700;
 }
 
-h1 {
-	font-size:3em;
-	//font-weight:700;
-}
+h1 {font-size:3em;}
 
-h2 {
-	font-size:2em;
-}
+h2 {font-size:2em;}
 
 h3 {
 	font-size:1.5em; 
-	a {
-		font-weight:normal;
-	}
+	a {font-weight:normal;}
 }
 
-h4 {
-	font-size:1.15em;
-}
+h4 {font-size:1.15em;}
+
 h5 {
 	font-size:1em;
 	font-weight:bold;
@@ -123,6 +112,7 @@ p {
 	margin-bottom:1.2em;
 	line-height:1.4;
 }
+
 ul, ol {
 	line-height:1.4;
 	margin-bottom:1.2em;
@@ -134,9 +124,7 @@ ul, ol {
 }
 
 ol {
-	li {
-		list-style-type:decimal;
-	}
+	li {list-style-type:decimal;}
 }
 
 i {font-style:italic;}
@@ -470,3 +458,7 @@ hr {
 	//right:10px;
 	padding:0 !important;
 }
+
+
+
+.antispam { display:none;}

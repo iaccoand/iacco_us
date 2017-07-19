@@ -1,0 +1,39 @@
+form > div {
+	margin-bottom:1.2em;
+	&:last-child{
+		margin-bottom:0;
+	}
+}
+
+label {
+  	display: block;
+  	font-weight: bold;
+	font-size:.9em;
+	margin-bottom:.1em;
+	color:$grey-six;
+}
+
+input, textarea {
+	width:100%;
+}
+
+textarea {
+	min-height:6em;
+}
+
+input {
+  	&[type="email"],
+  	&[type="text"] {
+    	-webkit-appearance: none;
+    	-moz-appearance: none;
+    	appearance: none;
+    	height: 38px;
+    	padding: 6px; // The 6px vertically centers text on FF, ignored by Webkit
+    	background-color: #fff;
+    	border: 1px solid $grey-five;
+    	border-radius: 3px;
+    	box-shadow: none;
+    	box-sizing: border-box;
+  	}
+	font-size:.9em; 
+}
