@@ -31,9 +31,11 @@ input {
     	padding: 6px; // The 6px vertically centers text on FF, ignored by Webkit
     	background-color: #fff;
     	border: 1px solid $grey-five;
-    	border-radius: 3px;
+		@include rounded(3px);
     	box-shadow: none;
     	box-sizing: border-box;
   	}
 	font-size:.9em; 
 }
+
+.antispam { display:none;}

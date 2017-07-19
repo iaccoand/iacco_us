@@ -3,41 +3,19 @@
 // Created Summer 2017
 
 // ---------------------- Variables ----------------
-
-//$font-color:#252525;
-
+$font-color:#283c46;
 $color-one:#ef4136;
 $color-two:#2e76ff;
 $color-three:#17bf4c;
-
-$primary-color:#2a6be5;
-$primary-light:#2e76ff;
-$primary-dark:#173b7f;
-
-$font-color:#283c46;
-
 $grey-one:#f7f7f7;	
 $grey-two:#e8e8e8;
 $grey-three:#ddd;		
 $grey-four:#ccc;
 $grey-five:#a1a1a1;
 $grey-six:#686868;		
-$dark-grey:#414141;		
 $highlight:#ffffcc;		
-$mavin-red:#e35111;		
-$light-red:#f06f37;		
-$dark-green:#389717;	
-$light-green:#48c31e;	
-$promoted:lighten($mavin-red, 40%);
-$background-color:#f0f4e4;
-
-//$unvisited: #2200cc;
-$unvisited:$primary-light;
-//$visited: #660099;
-$visited:$primary-light;
-
-$line-height:1.25em;
-
+$unvisited:#2e76ff;
+$visited:#2e76ff;
 $gutter:10px;
 
 // ---------------------- Mixins and Partial  ----------------
@@ -64,9 +42,7 @@ $gutter:10px;
 @import "buttons";
 @import "images";
 @import "lightbox";
-//@import "marvin";
-//@import "speech-bubble";
-@import "source-sans-pro";
+@import "source-sans-pro"; //font weights 300, 400, 700, 900
 @import "forms";
 
 // -------------------- Basic Stuff --------------------
@@ -80,8 +56,6 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-	//font-family:Helvetica, Arial, sans-serif;
-	//font-family: 'Open Sans', sans-serif;
 	font-weight:700;
 }
 
@@ -155,7 +129,6 @@ hr {
 }
 
 // -------------------- Utilities --------------------
-
 .u-full-width {
 	width: 100%;
   	box-sizing: border-box;
@@ -224,28 +197,12 @@ hr {
 	}
 }
 
-/*.round-number {
-	padding:0;
-	text-align:center;
-	span {
-		display:inline-block;
-		height:1.5em;
-		width:1.5em;
-		font-size:1.5em;
-		line-height:1.5em;
-		color:#fff;
-		@include rounded(50%);
-		background-color:$primary-color;
-	}
-}*/
-
 .background-texture {
 	background: $grey-one url(../images/blob-comp.svg) top center repeat-y;
     background-size: 200%, 100rem;
 }
 
 // ---------------------- Home ----------------
-
 #header {
 	.logo {
 		max-height:90px;
@@ -257,7 +214,7 @@ hr {
 		padding:0; 
 		margin:0 20px; 
 		display:inline-block; 
-		border-bottom:1px solid #ccc;
+		border-bottom:1px solid $grey-four;
 	}
 	@media (#{$bp-smaller-than-phablet}){
 		text-align:center;
@@ -289,7 +246,6 @@ hr {
 		opacity:1;
 	}
 	@media (#{$bp-smaller-than-phablet}){
-		//display:none;
 		position:relative;
 		transform:translateY(-160px);
 		right:0;
@@ -366,21 +322,19 @@ hr {
 	img {
 		width:100%;
 		height:auto;
-		border:1px solid #ccc;
-		@include shadow(#ccc);
+		border:1px solid $grey-four;
+		@include shadow($grey-four);
 	}
 	h5 {
 		padding:.5em 0 0 0;
 	}
 	p {
 		color:$grey-six;
-		//font-style:italic;
 		font-size:.9em;
 	}
 }
 
 // ---------------------- Footer ----------------
-
 .site-info {
 	text-align:center;
 	color:$grey-five;
@@ -389,7 +343,7 @@ hr {
 	a {
 		text-decoration:none;
 		&:hover, &:focus {
-			color:$mavin-red;
+			color:$color-one;
 		}	
 	}
 	.footer-links {
@@ -397,7 +351,7 @@ hr {
 		line-height:2em;
 		a {
 			padding:.25em .4em;
-			color:$mavin-red;
+			color:$color-one;
 			&:hover {text-decoration:underline;}
 		}
 		.divider {
@@ -425,7 +379,6 @@ hr {
 }
 
 // ---------------------- Responsive Enhancements ----------------
-
 .responsive-break {
 	display:none;
 	@media (#{$bp-smaller-than-tablet}){
@@ -450,15 +403,14 @@ hr {
 }
 
 // ---------------------- Lightbox overrides ----------------
-
-.featherlight .featherlight-close-icon {
-	line-height:40px;
-	width:40px;
-	font-size:30px;
-	//right:10px;
-	padding:0 !important;
+.featherlight {
+	.featherlight-content {
+		@include rounded(3px);
+	}
+	.featherlight-close-icon {
+		line-height:40px;
+		width:40px;
+		font-size:30px;
+		padding:0 !important;
+	}
 }
-
-
-
-.antispam { display:none;}
