@@ -29,7 +29,7 @@ $(document).ready(function() {
 			.addTo(controller);
 		});
 		
-	}, 100); //wait for page/js to finish loading before calculating height.
+	}, 200); //wait for page/js to finish loading before calculating height.
 	
 	$('.paint-bucket').click(function(){ //change colors when paint buckets clicked.
 		var paintColor = $(this).css('color'); 	//get paint bucket color
