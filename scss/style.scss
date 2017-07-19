@@ -118,7 +118,7 @@ a:hover {
 	text-decoration:underline;
 }
 
-hr {
+/*hr {
 	border:0;
 	height:1px;
 	border-top:1px solid $grey-two;
@@ -126,14 +126,9 @@ hr {
 	&.wide {
 		margin:2em 0;
 	}
-}
+}*/
 
 // -------------------- Utilities --------------------
-.u-full-width {
-	width: 100%;
-  	box-sizing: border-box;
-}
-
 .container:after,
 .row:after,
 .u-cf {
@@ -147,39 +142,9 @@ hr {
 	color:$grey-three;
 }
 
-.padtop {padding-top:1em;}
 .padbox {padding:$gutter;}
-.nobottom-padbox {padding:$gutter $gutter 0 $gutter;}
-.gutterbox {padding:(.5*$gutter) $gutter;}
-.padleft {display:inline-block; padding-left:1em;}
-.top-margin {margin-top:6em;}
-.noshow {display:none;}
 .hidden {visibility:hidden;}
-.ghost {opacity:.1;}
 .highlight {background-color:$highlight;}
-.highlighter {
-	background-color:#ffff78; 
-	color:$grey-six; 
-	font-weight:bold;
-}
-
-.center-align {
-	text-align:center;
-}
-
-.video-wrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-}
-.video-wrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
 
 .step {
 	display:table;
@@ -390,16 +355,6 @@ hr {
 	@media (#{$bp-smaller-than-tablet}){
 		display:none !important;
 	}
-}
-
-// ---------------------- Scrolling fixes ----------------
-.scrollContent {
-    position: relative;
-    /*height: 100%;*/
-}
-
-.trigger-space {
-	min-height: 1px;
 }
 
 // ---------------------- Lightbox overrides ----------------
