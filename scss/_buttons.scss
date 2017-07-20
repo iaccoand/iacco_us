@@ -11,6 +11,10 @@ button, .button {
 	padding: 10px 15px;
 	background-color:$grey-four;
 	border-color:darken($grey-four, 10%);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: none;
 	&:hover, &:focus {
 		background-color:darken($grey-four, 5%);
 		text-decoration:none;

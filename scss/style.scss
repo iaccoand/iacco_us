@@ -167,6 +167,11 @@ a:hover {
     background-size: 200%, 100rem;
 }
 
+.hint-text {
+	color:$grey-five;
+	font-size:.9em;
+}
+
 // ---------------------- Home ----------------
 #header {
 	.logo {
@@ -361,6 +366,10 @@ a:hover {
 .featherlight {
 	.featherlight-content {
 		@include rounded(3px);
+		max-width:600px;
+	}
+	h5 {
+		padding:0;
 	}
 	.featherlight-close-icon {
 		line-height:40px;
