@@ -44,7 +44,7 @@ $gutter:10px;
 @import "lightbox";
 @import "source-sans-pro"; //font weights 300, 400, 700, 900
 @import "forms";
-@import "bubble";
+@import "mouse";
 
 // -------------------- Basic Stuff --------------------
 html {
@@ -177,6 +177,10 @@ a:hover {
 		display:inline-block; 
 		border-bottom:1px solid $grey-four;
 	}
+	p {
+		font-size:.9em;
+		margin:0 20px; 
+	}
 	@media (#{$bp-smaller-than-phablet}){
 		text-align:center;
 		h1 {
@@ -301,6 +305,7 @@ a:hover {
 	color:$grey-five;
 	padding-top:1.5em;
 	font-size:.9em;
+	margin-bottom:400px;
 	a {
 		text-decoration:none;
 		&:hover, &:focus {

@@ -29,6 +29,16 @@ $(document).ready(function() {
 			.addTo(controller);
 		});
 		
+		$('.speech-bubble').each(function(){ 
+			var showBubble = new ScrollMagic.Scene({
+				triggerElement: this,
+				triggerHook: 'onEnter',
+				reverse: false //keep bubble showing
+			})
+			.setClassToggle(this, 'fade-in')
+			.addTo(controller);
+		});
+		
 	}, 200); //wait for page/js to finish loading before calculating height.
 	
 	$('.paint-bucket').click(function(){ //change colors when paint buckets clicked.
@@ -40,6 +50,16 @@ $(document).ready(function() {
 		$('.number-holder').children('span').css('background-color', paintColor); 	//set step color
 		$('.arrow').find('path').css('stroke', paintColor); //set arrow color
 		return false;
+	});
+	
+	//----------Toggle hidden class for help text
+	$("#mouse").click(function() {
+		var nextChirp = $(".chirp:visible").next(".chirp");
+		if (nextChirp.length == 0) { // wrap around to beginning
+			nextChirp = $(".chirp:first");
+		}
+		$(".chirp").hide();
+		nextChirp.show();
 	});
 	
 });
