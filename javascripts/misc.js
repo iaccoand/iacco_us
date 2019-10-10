@@ -47,7 +47,7 @@ $(document).ready(function() {
 		$('#page-puddle').css('border-color', paintColor); //set bottom border color
 		$('#drop').children('path').css('fill', paintColor); 	//set droplet color
 		$('.logo-color').css('fill', paintColor); 	//set logo color
-		$('.number-holder').children('span').css('background-color', paintColor); 	//set step color
+		$('.step-title').children('span').css('background-color', paintColor); 	//set step color
 		$('.arrow').find('path').css('stroke', paintColor); //set arrow color
 		return false;
 	});

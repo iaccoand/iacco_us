@@ -137,20 +137,28 @@ a:hover {
 .hidden {visibility:hidden;} 
 .highlight {background-color:$highlight;}
 
-.step {
-	display:table;
-	& > span {
-		display:table-cell;
+#design {
+	.column {
+		padding-top:1em
 	}
-	.number-holder span {
+}
+
+.step {
+	font-size:.9em;
+	.step-title span {
 		@include rounded(10px);
 		padding:1px 10px;
-		margin-right:10px;
+		//margin-right:10px;
 		color:#fff;
 		font-weight:bold;
 		background-color:$color-one;
 		white-space:nowrap;	
 	}
+}
+
+.dev-gate {
+	text-align:center;
+	background-color:$grey-two;
 }
 
 .background-texture {
