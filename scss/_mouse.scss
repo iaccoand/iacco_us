@@ -38,7 +38,7 @@
 	opacity:0;
 	&.fade-in {
 		opacity:1;
-		animation: Appear 1s;
+		animation: Appear 1.5s;
 	}
 	&:before {
 		content: "";
