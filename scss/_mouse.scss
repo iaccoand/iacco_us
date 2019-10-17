@@ -4,6 +4,8 @@
 	height:200px;
 	width:100%;
 	position:relative;
+	border-bottom:3px solid $color-one;
+	margin-bottom:2*$gutter;
 	.speech-bubble {
 		display:inline-block;
 		margin-bottom:50px;
@@ -14,7 +16,12 @@
 	position:relative;
 	z-index:100;
 	vertical-align:bottom;
-	padding:0 0 .5*$gutter .5*$gutter;
+	padding:0 0 0 .5*$gutter;
+	svg {
+		vertical-align:bottom;
+		position:relative;
+		bottom:-1px;
+	}
 	svg:hover {
 		cursor:pointer;
 	}
@@ -29,6 +36,15 @@
 	width:100%;
 	position:relative;
 }
+
+.chirp {
+  display: none;
+}
+
+.chirp:first-child {
+  display: block;
+}
+
 .speech-bubble  {
 	background: #528084;
 	padding: .5em;
@@ -36,9 +52,10 @@
 	position:relative;
 	@include rounded(3px);
 	opacity:0;
+	margin-right:$gutter;
 	&.fade-in {
 		opacity:1;
-		animation: Appear 1.5s;
+		animation: Appear 2s;
 	}
 	&:before {
 		content: "";
@@ -73,17 +90,6 @@
 	display:block;
 	width:100%;
 	text-align:center;
-	position:absolute;
-	bottom:.5*$gutter;
-	left:0;
-	right:0;
 	font-size:.9em;
 	color:$grey-five;
-}
-
-.chirp {
-  display: none;
-}
-.chirp:first-child {
-  display: block;
 }

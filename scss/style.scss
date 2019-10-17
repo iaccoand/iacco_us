@@ -1,6 +1,5 @@
 // Hand crafted by Andrew Iacco
 // Ann Arbor, Michigan
-// Created Summer 2017
 
 // ---------------------- Variables ----------------
 $font-color:#283c46;
@@ -159,6 +158,7 @@ a:hover {
 .dev-gate {
 	text-align:center;
 	background-color:$grey-two;
+	border:2px dashed $grey-five;
 }
 
 .background-texture {

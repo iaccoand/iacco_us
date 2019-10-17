@@ -49,6 +49,7 @@ $(document).ready(function() {
 		$('.logo-color').css('fill', paintColor); 	//set logo color
 		$('.step-title').children('span').css('background-color', paintColor); 	//set step color
 		$('.arrow').find('path').css('stroke', paintColor); //set arrow color
+		$('.mouse-holder').css('border-color', paintColor); //set bottom border color
 		return false;
 	});
 	
