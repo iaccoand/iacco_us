@@ -55,7 +55,7 @@
 	margin-right:$gutter;
 	&.fade-in {
 		opacity:1;
-		animation: Appear 2s;
+		animation: Appear 2.5s;
 	}
 	&:before {
 		content: "";
