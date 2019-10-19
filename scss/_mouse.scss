@@ -21,6 +21,8 @@
 		vertical-align:bottom;
 		position:relative;
 		bottom:-1px;
+		width:75px;
+		fill:$grey-five;
 	}
 	svg:hover {
 		cursor:pointer;
@@ -46,7 +48,7 @@
 }
 
 .speech-bubble  {
-	background: #528084;
+	background: $speech-bubble-color;
 	padding: .5em;
 	color: #fff;
 	position:relative;
@@ -62,9 +64,9 @@
 		width: 0px;
 		height: 0px;
 		position: absolute;
-		border-left: 10px solid #528084;
+		border-left: 10px solid $speech-bubble-color;
 		border-right: 10px solid transparent;
-		border-top: 10px solid #528084;
+		border-top: 10px solid $speech-bubble-color;
 		border-bottom: 10px solid transparent;
 		left: 19px;
 		bottom: -19px;
