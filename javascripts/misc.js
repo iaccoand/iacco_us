@@ -48,9 +48,26 @@ $(document).ready(function() {
 		$('#drop').children('path').css('fill', paintColor); 	//set droplet color
 		$('.logo-color').css('fill', paintColor); 	//set logo color
 		$('.step-title').children('span').css('background-color', paintColor); 	//set step color
+		$('.process-bubble').css('fill', paintColor); //set process bubble color
 		$('.arrow').find('path').css('stroke', paintColor); //set arrow color
 		$('.mouse-holder').css('border-color', paintColor); //set bottom border color
 		return false;
+	});
+	
+	$('.paint-bucket.color-one').click(function(){
+	    $('#contact .button').removeClass().addClass('button orange');
+	});
+	
+	$('.paint-bucket.color-two').click(function(){
+	    $('#contact .button').removeClass().addClass('button blue');
+	});
+	
+	$('.paint-bucket.color-three').click(function(){
+	    $('#contact .button').removeClass().addClass('button green');
+	});
+	
+	$('.paint-bucket.color-four').click(function(){
+	    $('#contact .button').removeClass().addClass('button black');
 	});
 	
 	//----------Toggle hidden class for help text

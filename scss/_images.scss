@@ -21,7 +21,6 @@
 		transition:all 1s ease-out;
 		&.fade-in {
 			opacity:1;
-		//	transform:translateY(0);
 		}
 	}
 	svg {
@@ -29,5 +28,11 @@
 		path {
 			stroke:$color-one;
 		}
+	}
+}
+
+#uc-design-process {
+	.process-bubble {
+		fill:$color-one;
 	}
 }
