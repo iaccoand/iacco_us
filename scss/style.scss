@@ -152,17 +152,6 @@ a:hover {
 	}
 }
 
-/*.responsive-divider {
-	margin-left:3*$gutter;
-	padding-left:3*$gutter;
-	border-left:1px solid $grey-three;
-	@media (#{$bp-smaller-than-phablet}){
-		margin-left:0;
-		padding-left:$gutter;
-		border-left:none;
-	}
-}*/
-
 .padbox {padding:$gutter;}
 
 .hidden {visibility:hidden;} 
@@ -209,11 +198,13 @@ a:hover {
 		padding:0; 
 		margin:0 20px; 
 		display:inline-block; 
-		border-bottom:1px solid $grey-four;
 	}
 	p {
 		font-size:.9em;
 		margin:0 20px; 
+		padding-top:.5*$gutter;
+		border-top:2px solid $grey-three;
+		display:inline-block;
 	}
 	@media (#{$bp-smaller-than-phablet}){
 		text-align:center;
